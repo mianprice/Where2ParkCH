@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.eas.where2parkch"
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Where2ParkCH</name>
+
+    <description>
+        Parking spot locator in Chapel Hill, NC. This app does not account for special occasions such as concerts, sporting events, graduation, etc, it is simply
+        an aggregation of existing information about parking in Chapel Hill. Icon/splash page design by Ainslie Perlmutt (http://www.ainslieperlmutt.com). Please contact me
+        (where2parkch@gmail.com) with any bugs, errors, inaccuracies, suggestions, critiques, and commentary.
+    </description>
+
+    <author email="where2parkch@gmail.com">
+        Evan Snyder 
+    </author>
+    
+    <gap:platform name="android"/>
+
+    <icon src="icons/carmdpi.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="icons/carhdpi.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="icons/carxhdpi.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="icons/carxxhdpi.png" gap:platform="android" gap:density="xxhdpi" />
+    
+    <gap:splash src="splash/carsplash2.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="splash/carsplash1.png" gap:platform="android" gap:density="hdpi" />
+    
+    <preference name="splash-screen-duration" value="3  000"/>
+    
+    <access origin="*" subdomains="true"/>
+    <access origin="google.com" /> 
+    <access origin="maps.google.com"/>
+    <access origin="google.com*" />
+    <access origin="maps.google.com*"/>
+    <access origin="code.jquery.com*"/>
+    <access origin="jquery.com*" />
+    <access origin="code.jquer.com/mobile*"/>
+</widget>
