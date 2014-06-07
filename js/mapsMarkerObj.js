@@ -85,11 +85,19 @@ function clearmap() {
 	clearInterval(myInt);
 }
 
+$(function(){
+	$('.parkButton').on('singletap', function(){
+		alert("singletap");
+		$.UIGoToArticle("#mapPage");
+	});
+	$('.parkButton').on('tap', function(){
+		alert("tap");
+		$.UIGoToArticle("#mapPage");
+	});
+})
   
 $(function(event) {
-	$('#parkButton').on('singletap', function(){
-		loadMap();
-	});
+
 	$('input[name="minutes"]').val('00');
 	//$.mobile.selectmenu.prototype.options.nativeMenu = false;
 	parkdb = openDatabase('Where2Park', '1.0', 'my first database', 2 * 1024 * 1024);
