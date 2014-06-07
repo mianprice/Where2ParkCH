@@ -56,11 +56,10 @@ function loadMap(){
 				callback: function(myLatLng){
 					if(myLatLng){
 						myPos = myLatLng;
-						// var date = new Date();
-						// var minutes = (date.getMinutes() > 9) ? date.getMinutes().toString() : "0" + date.getMinutes().toString();
-						// var stringTime = date.getHours().toString() + minutes;
-						// var dateArr = [date.getDay(), stringTime, myPos.toString()];
-						var dateArr = [5, "2249","(35.91303, -79.05570699999998)"]
+						var date = new Date();
+						var minutes = (date.getMinutes() > 9) ? date.getMinutes().toString() : "0" + date.getMinutes().toString();
+						var stringTime = date.getHours().toString() + minutes;
+						var dateArr = [date.getDay(), stringTime, myPos.toString()];
 						resetFlag=true;
 						initPage(dateArr);
 					}
@@ -87,9 +86,6 @@ function clearmap() {
 
   
 $(function(event) {
-	$('#parkButton').on('singletap', function(){
-		loadMap();
-	});
 	$('input[name="minutes"]').val('00');
 	//$.mobile.selectmenu.prototype.options.nativeMenu = false;
 	parkdb = openDatabase('Where2Park', '1.0', 'my first database', 2 * 1024 * 1024);
@@ -140,7 +136,6 @@ function specifiedTime(){
 		
 	
 }
-
 function initPage(dateArr){
 	
 	//initializeMap();
@@ -242,25 +237,25 @@ function initPage(dateArr){
 		
 	}
 	specFlag=false;
-	$.UIGoToArticle('#mapPage');
+	$.mobile.changePage("index.html#mapPage");
 	
-	// google.maps.event.addListener(gmap, 'idle', function() {
-	// 	setTimeout(function(){google.maps.event.trigger(gmap, 'resize'); bullshit =true;}, 500);
+	google.maps.event.addListener(gmap, 'idle', function() {
+		setTimeout(function(){google.maps.event.trigger(gmap, 'resize'); bullshit =true;}, 500);
 		
-	// });
-	// bullshit = false;
-	// myInt = setInterval(function(){
-	// 	if(!bullshit){
-	// 		gmap.setCenter(myPos);gmap.setZoom(15);
-	// 		onemore = true;
-	// 	}
-	// 	if (onemore) {
-	// 		setTimeout(function(){gmap.setCenter(myPos);gmap.setZoom(15);}, 600);
-	// 		onemore=false;
+	});
+	bullshit = false;
+	myInt = setInterval(function(){
+		if(!bullshit){
+			gmap.setCenter(myPos);gmap.setZoom(15);
+			onemore = true;
+		}
+		if (onemore) {
+			setTimeout(function(){gmap.setCenter(myPos);gmap.setZoom(15);}, 600);
+			onemore=false;
 			
-	// 	}
-	// }, 300);
-	// setTimeout(function(){clearInterval(myInt);}, 5000);
+		}
+	}, 300);
+	setTimeout(function(){clearInterval(myInt);}, 5000);
 	
 	
 	
