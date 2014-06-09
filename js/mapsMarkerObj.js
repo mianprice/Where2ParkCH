@@ -86,11 +86,11 @@ function clearmap() {
 }
 
 $(function(){
-	$('.parkButton').on('singletap', function(){
+	$('#doIt').on('singletap', function(){
 		alert("singletap");
 		$.UIGoToArticle("#mapPage");
 	});
-	$('.parkButton').on('tap', function(){
+	$('#parkNow').on('tap', function(){
 		alert("tap");
 		$.UIGoToArticle("#mapPage");
 	});
